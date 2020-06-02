@@ -175,7 +175,7 @@ public :
 	 * S'il n'y a pas de case selectionnee, alors le tableau de retour
 	 * va contenir une seule case avec la valeur -1.
      *
-	 *	1. Il faudra parcourir le tableau pour trouver le nombre de cases
+	 *	
 	 *	
 	 *   
      * @author : Tristan Eliassaint (ELIT03099608)
