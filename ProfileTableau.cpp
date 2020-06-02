@@ -2,7 +2,6 @@
 #include <cassert>
 #include <cmath>
 
-
 #include "ProfileTableau.hpp"
 
 using namespace std;
@@ -115,27 +114,26 @@ ProfileTableau::indicesPlusUtilises( void )
 	// le nombre d’accès est supérieur ou égal a la moyenne plus l’écart type
     // placez votre code ici.
 
-	int * tabIndices;
-	if (! _estValideIndice )
-	{
+		int * tabIndices;
 		double bareme = ecartType() + nbrAccesMoyen();
 		int compteur=0;
-		
-			for (int i = 0; i < _taille; i++){
-			// Vous devrez premièrement identifier le nombre de cases avec un accès élevé, disons k (qui est plus petit que n)
-				if (_nbrAcces[i] >= bareme) {
-					compteur++;
+		int compteur2=0;
+		for (int i = 0; i < _taille; i++){
+		// Vous devrez premièrement identifier le nombre de cases avec un accès élevé, disons k (qui est plus petit que n)
+			if (_nbrAcces[i] >= bareme){
+				compteur++;
 				}
 			}
-			
+
 			tabIndices = new int[compteur+1];
-			for (int i = 0; i < compteur; i++){
+
+			for (int i = 0; i < _taille; i++){
 				if (_nbrAcces[i] >= bareme) {
-					tabIndices[i] = _nbrAcces[i];
+					tabIndices[compteur2] = i;
+					compteur2++;
 				}
 		}
-	tabIndices[compteur+1] = -1;
-	}
+	tabIndices[compteur] = -1;
 
 	return tabIndices;
 }

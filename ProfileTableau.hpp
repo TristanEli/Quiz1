@@ -72,17 +72,7 @@ class ProfileTableau {
 	 */
 	bool _estValideEcartType;
 	
-	/**
-	 * Variable Int qui represente l'indice le plus utilisé
-	 */
-	int _indicePlusUtilises;
 
-	/**
-	 * Un booleen indiquant si le contenue de la variable _indicePlusUtilises est
-	 * a jour.
-	 */
-	bool _estValideIndice;
-	
 	
 	
 public :
