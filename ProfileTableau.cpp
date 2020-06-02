@@ -106,34 +106,31 @@ ProfileTableau::ecartType( void )
 
 
 int * 
-ProfileTableau::indicesPlusUtilises( void )
-{
-	//Regarder tout les indices et garder ceux dont
-	//le nombre d'accès est >= a moyenne + ecart type
-	// retourne les indices des cases du tableau qui sont le plus utilisées
-	// le nombre d’accès est supérieur ou égal a la moyenne plus l’écart type
-    // placez votre code ici.
+ProfileTableau::indicesPlusUtilises( void ){
 
-		int * tabIndices;
-		double bareme = ecartType() + nbrAccesMoyen();
-		int compteur=0;
-		int compteur2=0;
-		for (int i = 0; i < _taille; i++){
-		// Vous devrez premièrement identifier le nombre de cases avec un accès élevé, disons k (qui est plus petit que n)
-			if (_nbrAcces[i] >= bareme){
-				compteur++;
-				}
+int * tabIndices;
+double bareme = ecartType() + nbrAccesMoyen();
+int compteur=0;
+int compteur2=0;
+
+//Parcourir le tableau et trouver le nombre de cases qui repondent au criteres
+	for (int i = 0; i < _taille; i++){
+		if (_nbrAcces[i] >= bareme){
+			compteur++;
 			}
-
-			tabIndices = new int[compteur+1];
-
-			for (int i = 0; i < _taille; i++){
-				if (_nbrAcces[i] >= bareme) {
-					tabIndices[compteur2] = i;
-					compteur2++;
-				}
 		}
+//Allocation dynamique du tableau dentier qui pourra contenir les indices
+tabIndices = new int[compteur+1];
+//S il y a des elements qui correspondent aux exigences on procede au remplissage du tableau
+	if (compteur!=0) {
+		for (int i = 0; i < _taille; i++){
+			if (_nbrAcces[i] >= bareme){
+				tabIndices[compteur2] = i;
+				compteur2++;
+			}
+		}
+	}	
+//Mettre le dernier indice a -1
 	tabIndices[compteur] = -1;
-
 	return tabIndices;
 }

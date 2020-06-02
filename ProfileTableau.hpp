@@ -175,10 +175,9 @@ public :
 	 * S'il n'y a pas de case selectionnee, alors le tableau de retour
 	 * va contenir une seule case avec la valeur -1.
      *
-	 *	1. Il faudra créer un tableau dynamique
+	 *	1. Il faudra parcourir le tableau pour trouver le nombre de cases
 	 *	
-	 *   placez votre analyse ici
-	 *
+	 *   
      * @author : Tristan Eliassaint (ELIT03099608)
 	 */
 	int * indicesPlusUtilises( void );
