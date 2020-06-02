@@ -2,7 +2,10 @@
 #include <cassert>
 #include <cmath>
 
+
 #include "ProfileTableau.hpp"
+
+using namespace std;
 
 ProfileTableau::ProfileTableau( int a_nbrElement )
 : _contenue( new int[ a_nbrElement ] ),
